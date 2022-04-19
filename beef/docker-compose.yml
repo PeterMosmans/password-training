@@ -1,0 +1,15 @@
+---
+version: "3.5"
+
+services:
+  beef:
+    container_name: beef
+    extra_hosts:
+      - beef.local:127.0.0.1
+    image: ros/beef
+    build: .
+    ports:
+      - 127.0.0.1:3000:3000
+    restart: unless-stopped
+    volumes:
+      - ./config.yaml:/beef/config.yaml
