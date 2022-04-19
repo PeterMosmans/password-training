@@ -22,8 +22,9 @@ docker-compose up --detach
 ```
 
 This will build a Docker image with the BeEF application installed, and launch
-it as container in the background, listening on [http://127.0.0.1:3000]. The
-first time may be a bit slow, as the image needs to be built from scratch.
+it as container in the background, listening on
+[http://127.0.0.1:3000](http://127.0.0.1:3000). The first time may be a bit
+slow, as the image needs to be built from scratch.
 
 If everything went okay, visiting that page will show you a generic Apache 2
 Test Page.
@@ -39,8 +40,9 @@ under `C:\Windows\System32\drivers\etc\hosts`):
 127.0.0.1 vulnerable.local
 ```
 
-Now, the BeEF application should be accessible using [http://beef.local:3000] as
-well as using [http://vulnerable.local:3000].
+Now, the BeEF application should be accessible using
+[http://beef.local:3000](http://beef.local:3000) as well as using
+[http://vulnerable.local:3000](http://vulnerable.local:3000).
 
 ## Shutdown
 
@@ -53,9 +55,10 @@ docker-compose down
 
 ### Configuration
 
-All variables are stored in the `config.yaml` file. Feel free to customize anything.
+All variables are stored in the `config.yaml` file. Feel free to customize
+anything.
 
 ## Notes
 
-Please note that this is a demo setup - and not meant to be used in production in
-any way.
+Please note that this is a demo setup - and not meant to be used in production
+in any way.
