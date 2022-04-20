@@ -31,6 +31,7 @@ search icon in the top right. This will open up a search box. Search for
 
 Now, an attacker discovered that the site contains a Cross-Site Scripting
 vulnerability. Search for the term
+
 ```javascript
 <img src=a onerror=alert(1)>
 ```
@@ -132,6 +133,10 @@ will fail (the binary file isn't present on our Attacker server), but this will
 demonstrate how easy it is to trick victims.
 
 ### Fun and games
+
+**Note:** For best results for the next demos, let the victim first click on the
+**OWASP Juice Shop** logo in the top left, so that all search results are
+visible. The more visual elements, the better...
 
 Just for fun, play a sound on the victim's computer. Search for _sound_ and
 execute the _Play Sound_ module.
