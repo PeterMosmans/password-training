@@ -30,8 +30,12 @@ search icon in the top right. This will open up a search box. Search for
 "banana". This will return all results having "banana" in their description.
 
 Now, an attacker discovered that the site contains a Cross-Site Scripting
-vulnerability. Search for the term [<img src=a
-onerror=alert(1)>](<http://vulnerable.local:3500/#/search?q=%3Cimg%20src%3Da%20onerror%3Dalert(1)%3E>).
+vulnerability. Search for the term
+```javascript
+<img src=a onerror=alert(1)>
+```
+
+[<http://vulnerable.local:3500/#/search?q=%3Cimg%20src%3Da%20onerror%3Dalert(1)%3E>](<http://vulnerable.local:3500/#/search?q=%3Cimg%20src%3Da%20onerror%3Dalert(1)%3E>).
 
 This will execute a reflected Cross-Site Scripting payload - an alert box will
 pop up, showing a 1.
